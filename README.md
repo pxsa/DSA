@@ -4,6 +4,4 @@
 
 ## Content
 
-- [Linked list](#linkedlist)
-
-## LinkedList
+- [Linked list](./linkedlist/Readme.md)
