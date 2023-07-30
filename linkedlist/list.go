@@ -11,6 +11,7 @@ type Node struct {
 // LinkedList represents the single linked list
 type LinkedList struct {
 	Head *Node
+	Tail *Node
 }
 
 // Append appends a new node to the linkedlist
@@ -20,6 +21,7 @@ func (l *LinkedList) Append(data any) {
 
 	if l.Head == nil {
 		l.Head = new
+		l.Tail = new
 		return
 	}
 	
@@ -30,6 +32,7 @@ func (l *LinkedList) Append(data any) {
 	}
 
 	cur.Next = new
+	l.Tail = new
 }
 
 // Prepend prepends a new node to the linkedlist
@@ -73,6 +76,10 @@ func (l *LinkedList) RemoveFirst() error {
 
 	l.Head = l.Head.Next
 
+	if l.Len() == 1 {
+		l.Tail = nil
+	}
+
 	return nil
 }
 
@@ -95,6 +102,7 @@ func (l *LinkedList) Remove(index int) error {
 	}
 
 	if index == l.Len() - 1 {
+		l.Tail = cur
 		cur.Next = nil
 	} else {
 		cur.Next = cur.Next.Next
