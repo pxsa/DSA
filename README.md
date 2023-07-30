@@ -1,6 +1,6 @@
 # DSA
 
-![dsa image](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgNToAIa1Bg9cRT4FaEBs2IJ3VgFXRtc_HKg&usqp=CAU)
+![dsa image](https://skillsdynamix.com/wp-content/uploads/2020/06/Data-Structures-and-Algorithms.jpg)
 
 ## Content
 
