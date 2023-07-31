@@ -18,6 +18,7 @@ func (l *DoublyLL) Len() int {
 
 	for cur != nil {
 		length += 1
+		cur = cur.Next
 	}
 
 	return length
@@ -25,18 +26,35 @@ func (l *DoublyLL) Len() int {
 
 // insert: prepend
 func (l *DoublyLL) Prepend(data any) {
-	// var new_node *Node
-	new_node := new(Node)
+	var new_node *Node = new(Node)
 	new_node.Data = data
-	// new_node := &Node{Data: data}
-	
+
 	// l is empty
-	l.Head = new_node
-	l.Tail = new_node
+	if l.Len() == 0 {
+		l.Head = new_node
+		l.Tail = new_node
 
 	// l is not empty
-	new_node.Next = l.Head
-	l.Head = new_node
+	} else {
+		l.Head.Prev = new_node
+		new_node.Next = l.Head
+		l.Head = new_node
+	}
+}
+
+// insert: append
+func (l *DoublyLL) Append(data any) {
+	
+	newNode := &Node{Data: data}
+
+	if l.Len() == 0 {
+		l.Head = newNode
+		l.Tail = newNode
+	} else {
+		l.Tail.Next = newNode
+		newNode.Prev = l.Tail
+		l.Tail = newNode
+	}
 }
 
 // search

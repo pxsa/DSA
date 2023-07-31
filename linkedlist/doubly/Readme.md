@@ -4,8 +4,11 @@
 
 ## TODO
 
-- [ ] len
+- [X] len
 - [ ] search
 - [ ] insert
+  - [X] prepend
+  - [X] append
+  - [ ] insert in any position
 - [ ] delete
 - [ ] update
